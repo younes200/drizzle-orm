@@ -9,7 +9,7 @@ interface MigrationConfig {
   migrations: Record<string, string>;
   migrationsTable?: string;
 }
-declare function migrate<TRelations extends AnyRelations>(db: EffectSQLiteDoDatabase<TRelations>, config: MigrationConfig): effect_Effect0.Effect<undefined, MigratorInitError | EffectDrizzleQueryError | effect_unstable_sql_SqlError0.SqlError, never>;
+declare function migrate<TRelations extends AnyRelations>(db: EffectSQLiteDoDatabase<TRelations>, config: MigrationConfig): effect_Effect0.Effect<undefined, EffectDrizzleQueryError | MigratorInitError | effect_unstable_sql_SqlError0.SqlError, never>;
 //#endregion
 export { migrate };
 //# sourceMappingURL=migrator.d.cts.map

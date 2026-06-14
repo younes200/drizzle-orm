@@ -41,7 +41,7 @@ declare class EffectLibsqlDatabase<TRelations extends AnyRelations = EmptyRelati
  */
 declare const make: <TRelations extends AnyRelations = EmptyRelations>(config?: EffectDrizzleSQLiteConfig<TRelations> | undefined) => Effect.Effect<EffectLibsqlDatabase<TRelations> & {
   $client: LibsqlClient;
-}, never, EffectCache | EffectLogger | LibsqlClient>;
+}, never, EffectLogger | EffectCache | LibsqlClient>;
 /**
  * Convenience function that creates an EffectLibsqlDatabase with `DefaultServices` already provided.
  */

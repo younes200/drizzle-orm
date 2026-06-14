@@ -66,10 +66,10 @@
     "@sqlitecloud/drivers": ">=1.0.653",
     "@tidbcloud/serverless": "*",
     "@tursodatabase/database": ">=0.6.0-pre.28 || >=0.6.0",
-    "@tursodatabase/sync": ">=0.6.0-pre.28 || >=0.6.0",
     "@tursodatabase/database-common": ">=0.6.0-pre.28 || >=0.6.0",
     "@tursodatabase/database-wasm": ">=0.6.0-pre.28 || >=0.6.0",
     "@tursodatabase/serverless": ">=1.1.3",
+    "@tursodatabase/sync": ">=0.6.0-pre.28 || >=0.6.0",
     "@types/better-sqlite3": "*",
     "@types/mssql": "^9.1.4",
     "@types/pg": "*",
@@ -183,6 +183,9 @@
     "@tursodatabase/sync": {
       "optional": true
     },
+    "@tursodatabase/sync-react-native": {
+      "optional": true
+    },
     "@tursodatabase/database-wasm": {
       "optional": true
     },
@@ -259,6 +262,7 @@
     "@tursodatabase/database-wasm": "0.6.0-pre.28",
     "@tursodatabase/serverless": "1.1.3",
     "@tursodatabase/sync": "0.6.0",
+    "@tursodatabase/sync-react-native": "0.7.0-pre.7",
     "@types/better-sqlite3": "^7.6.12",
     "@types/node": "^25.4.0",
     "@types/pg": "^8.10.1",
@@ -6899,6 +6903,18 @@
       },
       "types": "./tursodatabase/wasm-migrator.d.ts",
       "default": "./tursodatabase/wasm-migrator.js"
+    },
+    "./tursodatabase/sync-react-native": {
+      "import": {
+        "types": "./tursodatabase/sync-react-native.d.ts",
+        "default": "./tursodatabase/sync-react-native.js"
+      },
+      "require": {
+        "types": "./tursodatabase/sync-react-native.d.cts",
+        "default": "./tursodatabase/sync-react-native.cjs"
+      },
+      "types": "./tursodatabase/sync-react-native.d.ts",
+      "default": "./tursodatabase/sync-react-native.js"
     },
     "./tursodatabase/wasm": {
       "import": {

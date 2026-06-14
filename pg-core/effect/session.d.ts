@@ -51,7 +51,7 @@ declare abstract class PgEffectTransaction<TEffectHKT extends QueryEffectHKTBase
   rollback(): EffectTransactionRollbackError;
   setTransaction(config: PgTransactionConfig): QueryEffectKind<TEffectHKT, void[]>;
 }
-declare const migrate: <TEffectHKT extends QueryEffectHKTBase>(migrations: MigrationMeta[], session: PgEffectSession<TEffectHKT, PgQueryResultHKT, EmptyRelations>, config: string | MigrationConfig) => Effect.Effect<undefined, MigratorInitError | SqlError | TEffectHKT["error"], TEffectHKT["context"]>;
+declare const migrate: <TEffectHKT extends QueryEffectHKTBase>(migrations: MigrationMeta[], session: PgEffectSession<TEffectHKT, PgQueryResultHKT, EmptyRelations>, config: string | MigrationConfig) => Effect.Effect<undefined, MigratorInitError | TEffectHKT["error"] | SqlError, TEffectHKT["context"]>;
 //#endregion
 export { PgEffectPreparedQuery, PgEffectSession, PgEffectTransaction, migrate };
 //# sourceMappingURL=session.d.ts.map
