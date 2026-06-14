@@ -41,7 +41,7 @@ declare class EffectSQLiteBunDatabase<TRelations extends AnyRelations = EmptyRel
  */
 declare const make: <TRelations extends AnyRelations = EmptyRelations>(config?: EffectDrizzleSQLiteConfig<TRelations> | undefined) => Effect.Effect<EffectSQLiteBunDatabase<TRelations> & {
   $client: SqliteClient;
-}, never, EffectLogger | EffectCache | SqliteClient>;
+}, never, EffectCache | EffectLogger | SqliteClient>;
 /**
  * Convenience function that creates an EffectSQLiteBunDatabase with `DefaultServices` already provided.
  */

@@ -34,7 +34,10 @@ function adaptStatement(stmt) {
 function adaptSyncReactNativeClient(client) {
 	return {
 		prepare: (sql) => adaptStatement(client.prepare(sql)),
-		transaction: (fn) => async () => client.transaction(fn)
+		transaction: (fn) => async () => client.transaction(fn),
+		run: (sql, ...params) => client.prepare(sql).run(...params),
+		all: (sql, ...params) => client.prepare(sql).all(...params),
+		get: (sql, ...params) => client.prepare(sql).get(...params)
 	};
 }
 function drizzle(config) {

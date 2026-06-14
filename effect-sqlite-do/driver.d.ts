@@ -44,7 +44,7 @@ type EffectDrizzleSQLiteDOConfig<TRelations extends AnyRelations> = EffectDrizzl
  */
 declare const make: <TRelations extends AnyRelations = EmptyRelations>(config: EffectDrizzleSQLiteDOConfig<TRelations>) => Effect.Effect<EffectSQLiteDoDatabase<TRelations> & {
   $client: SqliteClient;
-}, never, EffectLogger | EffectCache | SqliteClient>;
+}, never, EffectCache | EffectLogger | SqliteClient>;
 /**
  * Convenience function that creates an EffectSQLiteDoDatabase with `DefaultServices` already provided.
  */

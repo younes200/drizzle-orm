@@ -41,7 +41,7 @@ declare class EffectPgDatabase<TRelations extends AnyRelations = EmptyRelations>
  */
 declare const make: <TRelations extends AnyRelations = EmptyRelations>(config?: EffectDrizzlePgConfig<TRelations> | undefined) => Effect.Effect<EffectPgDatabase<TRelations> & {
   $client: PgliteClient;
-}, never, EffectLogger | EffectCache | PgliteClient>;
+}, never, EffectCache | EffectLogger | PgliteClient>;
 /**
  * Convenience function that creates an EffectPgDatabase with `DefaultServices` already provided.
  */

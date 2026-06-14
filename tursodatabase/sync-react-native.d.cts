@@ -19,13 +19,16 @@ type SyncReactNativeDatabaseClient = {
 declare function adaptSyncReactNativeClient(client: SyncReactNativeDatabaseClient): {
   prepare: (sql: string) => {
     raw(asArrays?: boolean): {
-      all: (...params: BindParams[]) => Promise<unknown[][] | Row[]>;
+      all: (...params: BindParams[]) => Promise<Row[] | unknown[][]>;
       get: (...params: BindParams[]) => Promise<unknown[] | Row | undefined>;
     };
     run: (...params: BindParams[]) => Promise<_tursodatabase_sync_react_native0.RunResult>;
     bind: (...params: BindParams[]) => /*elided*/any;
   };
   transaction: (fn: () => Promise<unknown>) => () => Promise<unknown>;
+  run: (sql: string, ...params: BindParams[]) => Promise<unknown>;
+  all: (sql: string, ...params: BindParams[]) => Promise<Row[]>;
+  get: (sql: string, ...params: BindParams[]) => Promise<Row | undefined>;
 };
 declare function drizzle<TRelations extends AnyRelations = EmptyRelations, TClient extends SyncReactNativeDatabaseClient = SyncReactNativeDatabaseClient>(config: DrizzleSQLiteConfig<TRelations> & {
   client: TClient;
